@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tőzsér Anita gyógytornász-fizioterapeuta. Felsővégtagi sérülések, irodai munkából eredő panaszok, tartásjavítás és személyre szabott mozgásterápia." />
+  <title>Tőzsér Anita – Gyógytornász-fizioterapeuta</title>
+
+  <style>
+    :root {
+      --bg: #f8f1ee;
+      --paper: #fffaf7;
+      --text: #4a3f3b;
+      --muted: #7e6962;
+      --accent: #c9958a;
+      --accent-dark: #9f766f;
+      --line: #ead6d1;
+      --soft: #f1ddd7;
+      --shadow: 0 18px 55px rgba(115, 80, 72, 0.12);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(233, 199, 190, 0.45), transparent 34rem),
+        linear-gradient(180deg, var(--bg), #fffaf7);
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 0;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 18px;
+      border: 1px solid rgba(201, 149, 138, 0.25);
+      border-radius: 999px;
+      background: rgba(255, 250, 247, 0.75);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(115, 80, 72, 0.07);
+      position: sticky;
+      top: 16px;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px;
+      align-items: center;
+      padding: 76px 0 62px;
+    }
+
+    .hero-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 250, 247, 0.68);
+      border: 1px solid rgba(201, 149, 138, 0.22);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px;
+      min-height: 430px;
+    }
+
+    .hero-card img {
+      width: min(420px, 100%);
+      display: block;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 13px;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      color: var(--accent-dark);
+      font-weight: 500;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      margin: 18px 0 30px;
+      font-family: Arial, sans-serif;
+      font-size: clamp(18px, 2vw, 24px);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .lead {
+      font-size: 20px;
+      color: var(--text);
+      max-width: 650px;
+      margin: 0 0 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(201, 149, 138, 0.32);
+    }
+
+    .button.secondary {
+      border: 1px solid var(--accent);
+      color: var(--accent-dark);
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 46px 0;
+    }
+
+    .section-card {
+      background: rgba(255, 250, 247, 0.82);
+      border: 1px solid rgba(201, 149, 138, 0.22);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(26px, 5vw, 52px);
+    }
+
+    .section-title {
+      margin-bottom: 24px;
+      font-size: clamp(30px, 4vw, 48px);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    .list {
+      display: grid;
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .list li,
+    .timeline li,
+    .process-step {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .list li::before,
+    .timeline li::before,
+    .process-step::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.78em;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .timeline strong {
+      color: var(--accent-dark);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .mini-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .mini-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    .process-step {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px 20px 24px 52px;
+    }
+
+    .process-step::before {
+      top: 31px;
+      left: 24px;
+    }
+
+    .process-step h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .prices {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .price-card {
+      background: linear-gradient(180deg, #fffaf7, #f7ece8);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .price {
+      margin: 12px 0;
+      font-family: Arial, sans-serif;
+      font-size: 28px;
+      color: var(--accent-dark);
+      font-weight: 800;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    footer {
+      padding: 28px 0 46px;
+      text-align: center;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        align-items: flex-start;
+        border-radius: 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero,
+      .two-col,
+      .grid-3,
+      .process,
+      .prices {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+
+      .hero-card {
+        min-height: auto;
+        padding: 24px;
+      }
+
+      h1 {
+        letter-spacing: 0.08em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site">
+    <nav class="nav" aria-label="Fő navigáció">
+      <a class="brand" href="#top">
+        <img src="logo.png" alt="Tőzsér Anita logó" />
+        <span>Tőzsér Anita</span>
+      </a>
+      <div class="nav-links">
+        <a href="#rolam">Rólam</a>
+        <a href="#teruletek">Területek</a>
+        <a href="#munka">Közös munka</a>
+        <a href="#arak">Árak</a>
+        <a href="#kapcsolat">Kapcsolat</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="site">
+    <section class="hero">
+      <div class="hero-card">
+        <img src="logo.png" alt="Tőzsér Anita gyógytornász logó" />
+      </div>
+
+      <div>
+        <p class="eyebrow">Gyógytornász-fizioterapeuta</p>
+        <h1>Tőzsér Anita</h1>
+        <p class="subtitle">BSc, MSc</p>
+        <p class="lead">
+          Személyre szabott gyógytorna és fizioterápia felsővégtagi sérülések,
+          irodai munkából eredő panaszok, tartásjavítás és mozgásminták optimalizálása terén.
+        </p>
+        <div class="buttons">
+          <a class="button primary" href="tel:+36706112210">Időpontkérés telefonon</a>
+          <a class="button secondary" href="https://www.facebook.com/profile.php?id=61566230889715" target="_blank" rel="noopener">Facebook oldal</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="rolam">
+      <div class="section-card">
+        <h2 class="section-title">Rólam</h2>
+        <div class="two-col">
+          <div>
+            <p>
+              Tőzsér Anita vagyok gyógytornász-fizioterapeuta.
+            </p>
+            <p>
+              Tanulmányaimat a Miskolci Egyetem Egészségtudományi Karán végeztem,
+              ahol gyógytornász diplomát szereztem 2019-ben, majd ezt követően
+              Fizioterápia mesterképzésen bővítettem tovább szakmai ismereteimet.
+            </p>
+            <p>
+              Szakmai tapasztalatot kórházi és sportrehabilitációs környezetben szereztem.
+              Dolgoztam idegsebészeti osztályon, valamint széles spektrumú mozgásszervi
+              problémák ambuláns kezelésében, beleértve a kézsebészeti, traumatológiai,
+              ortopédiai és reumatológiai eseteket.
+            </p>
+            <p>
+              Rendszeresen részt veszek hazai és nemzetközi szakmai kongresszusokon,
+              ahol előadóként is megosztom tapasztalataimat.
+            </p>
+          </div>
+
+          <div>
+            <h3>Végzettségeim</h3>
+            <ul class="timeline">
+              <li><strong>2015–2019:</strong> Miskolci Egyetem Egészségtudományi Kar – Gyógytornász-fizioterapeuta BSc</li>
+              <li><strong>2018:</strong> SMR (self myofascial release)</li>
+              <li><strong>2019:</strong> Oxygen Advantage® Szeminárium</li>
+              <li><strong>2022:</strong> Kinesiotape alapszint + haladószint</li>
+              <li><strong>2022:</strong> Köpöly terápia</li>
+              <li><strong>2022:</strong> Vagus terápia</li>
+              <li><strong>2023:</strong> FDM 1,2,3 (Fascia Disztorziós Modell)</li>
+              <li><strong>2023:</strong> Sport-FDM</li>
+              <li><strong>2024:</strong> Visceralis terápia (máj-epe, méh-prosztata)</li>
+              <li><strong>2023–2025:</strong> Miskolci Egyetem Egészségtudományi Kar – Fizioterápia MSc</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teruletek">
+      <div class="section-card">
+        <h2 class="section-title">Kiemelt területeim</h2>
+        <div class="grid-3">
+          <article class="mini-card">
+            <h3>Felsővégtagi sérülések</h3>
+            <p>Kéz, csukló, könyök és váll műtét utáni mozgásterápiája, túlterheléses panaszok kezelése.</p>
+          </article>
+          <article class="mini-card">
+            <h3>Irodai panaszok</h3>
+            <p>Irodai munkából eredő nyak-, váll- és hátfájdalmak kezelése.</p>
+          </article>
+          <article class="mini-card">
+            <h3>Tartásjavítás</h3>
+            <p>Preventív tartásjavítás és mozgásminták optimalizálása.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="fordulj-hozzam">
+      <div class="section-card">
+        <h2 class="section-title">Fordulj hozzám, ha…</h2>
+        <ul class="list">
+          <li>Kézsebészeti műtét után segítségre van szükséged a felépülésben.</li>
+          <li>Csukló-, könyök- vagy vállsérülés után szeretnél újra fájdalommentesen mozogni.</li>
+          <li>A sok ülés miatt rendszeresen fáj a nyakad, vállad vagy a hátad.</li>
+          <li>A számítógépes munka egyre jobban megterheli a csuklódat vagy az alkarodat.</li>
+          <li>Visszatérő könyökfájdalom, például teniszkönyök, nehezíti a mindennapjaidat.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="munka">
+      <div class="section-card">
+        <h2 class="section-title">Hogyan zajlik a közös munka?</h2>
+        <div class="process">
+          <article class="process-step">
+            <h3>1. Állapotfelmérés</h3>
+            <p>Megismerem a problémád hátterét.</p>
+          </article>
+          <article class="process-step">
+            <h3>2. Személyre szabott terv</h3>
+            <p>Olyan gyakorlatokat és tanácsokat kapsz, amik valóban neked szólnak.</p>
+          </article>
+          <article class="process-step">
+            <h3>3. Közös munka</h3>
+            <p>Lépésről lépésre haladunk a fájdalommentes mozgás felé.</p>
+          </article>
+          <article class="process-step">
+            <h3>4. Hosszútávú eredmény</h3>
+            <p>Nem csak jobban leszel – tudni is fogod, hogyan tartsd fenn.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="arak">
+      <div class="section-card">
+        <h2 class="section-title">Árak</h2>
+        <div class="prices">
+          <article class="price-card">
+            <h3>Állapotfelmérés</h3>
+            <p class="price">18.000 Ft</p>
+            <p>60 perc</p>
+            <p>Az első alkalom során részletes állapotfelmérés és személyre szabott kezelési terv készül, valamint megkezdjük a terápiát.</p>
+          </article>
+          <article class="price-card">
+            <h3>Komplex, személyre szabott kezelés</h3>
+            <p class="price">15.000 Ft / alkalom</p>
+            <p>A kezelés minden esetben egyénre szabott, amely során az általam alkalmazott módszerek közül a számodra legmegfelelőbbeket kombinálom.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kapcsolat">
+      <div class="section-card contact">
+        <h2 class="section-title">Kapcsolat</h2>
+        <p>Időpontkéréshez vagy kérdés esetén keress telefonon vagy Facebookon.</p>
+        <div class="contact-links">
+          <a class="button primary" href="tel:+36706112210">+36 70 611 2210</a>
+          <a class="button secondary" href="https://www.facebook.com/profile.php?id=61566230889715" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    © <span id="year"></span> Tőzsér Anita – gyógytornász-fizioterapeuta
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
