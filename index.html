@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="gyógytornász Debrecen, kéz rehabilitáció, váll fájdalom kezelés">
   <meta name="description" content="Tőzsér Anita gyógytornász-fizioterapeuta. Felsővégtagi sérülések, irodai munkából eredő panaszok, tartásjavítás és személyre szabott mozgásterápia." />
   <title>Tőzsér Anita – Gyógytornász-fizioterapeuta</title>
 
@@ -379,6 +380,54 @@
         letter-spacing: 0.08em;
       }
     }
+  
+    .trust {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .floating-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: bold;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .section-card {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .mini-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+    }
+
+    .section-title {
+      letter-spacing: 0.03em;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
   </style>
 </head>
 
@@ -402,16 +451,17 @@
   <main id="top" class="site">
     <section class="hero">
       <div class="hero-card">
-        <img src="logo.png" alt="Tőzsér Anita gyógytornász logó" />
+        <img src="tozseranita.png" alt="Tőzsér Anita gyógytornász" />
       </div>
 
       <div>
-        <p class="eyebrow">Gyógytornász-fizioterapeuta</p>
+        <p class="eyebrow">Gyógytornász</p>
         <h1>Tőzsér Anita</h1>
-        <p class="subtitle">BSc, MSc</p>
+        <p class="subtitle">Debrecen, Hajdu-Bihar, Magyarország</p>
+        <p class="trust">6+ év szakmai tapasztalat • Kórházi és sportrehabilitációs háttér</p>
         <p class="lead">
-          Személyre szabott gyógytorna és fizioterápia felsővégtagi sérülések,
-          irodai munkából eredő panaszok, tartásjavítás és mozgásminták optimalizálása terén.
+          Személyre szabott gyógytorna kéz- és felső végtagi sérülések kezelésére, irodai
+          munkából eredő panaszok enyhítésére, valamint preventív tartásjavításra.
         </p>
         <div class="buttons">
           <a class="button primary" href="tel:+36706112210">Időpontkérés telefonon</a>
@@ -473,7 +523,7 @@
             <p>Kéz, csukló, könyök és váll műtét utáni mozgásterápiája, túlterheléses panaszok kezelése.</p>
           </article>
           <article class="mini-card">
-            <h3>Irodai panaszok</h3>
+            <h3>Ülőmunkával összefüggő panaszok</h3>
             <p>Irodai munkából eredő nyak-, váll- és hátfájdalmak kezelése.</p>
           </article>
           <article class="mini-card">
@@ -544,6 +594,7 @@
       <div class="section-card contact">
         <h2 class="section-title">Kapcsolat</h2>
         <p>Időpontkéréshez vagy kérdés esetén keress telefonon vagy Facebookon.</p>
+        <p>📍 Debrecen</p>
         <div class="contact-links">
           <a class="button primary" href="tel:+36706112210">+36 70 611 2210</a>
           <a class="button secondary" href="https://www.facebook.com/profile.php?id=61566230889715" target="_blank" rel="noopener">Facebook</a>
@@ -559,5 +610,8 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+<a href="tel:+36706112210" class="floating-cta">📞 Időpont</a>
 </body>
+
 </html>
