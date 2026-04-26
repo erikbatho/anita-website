@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="keywords" content="gyógytornász Debrecen, kéz rehabilitáció, váll fájdalom kezelés">
-  <meta name="description" content="Tőzsér Anita gyógytornász-fizioterapeuta. Felsővégtagi sérülések, irodai munkából eredő panaszok, tartásjavítás és személyre szabott mozgásterápia." />
+  <meta name="description" content="Tőzsér Anita gyógytornász. Személyre szabott gyógytorna kéz- és felső végtagi sérülések kezelésére, irodai munkából eredő panaszok enyhítésére, valamint preventív tartásjavításra." />
   <title>Tőzsér Anita – Gyógytornász-fizioterapeuta</title>
 
   <style>
@@ -90,14 +90,54 @@
 
     .nav-links {
       display: flex;
-      gap: 18px;
+      align-items: center;
+      gap: 10px;
       font-family: Arial, sans-serif;
-      font-size: 13px;
+      font-size: 15px;
       color: var(--muted);
     }
 
     .nav-links a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 9px 15px;
+      border-radius: 999px;
       text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.035em;
+      white-space: nowrap;
+      transition: color 0.22s ease, background 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 7px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.22s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent-dark);
+      background: rgba(201, 149, 138, 0.13);
+      box-shadow: 0 8px 20px rgba(115, 80, 72, 0.08);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
     }
 
     .hero {
@@ -235,15 +275,13 @@
     }
 
     .list li,
-    .timeline li,
-    .process-step {
+    .timeline li {
       position: relative;
       padding-left: 28px;
     }
 
     .list li::before,
-    .timeline li::before,
-    .process-step::before {
+    .timeline li::before {
       content: "";
       position: absolute;
       left: 0;
@@ -295,17 +333,22 @@
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 22px;
-      padding: 26px 20px 24px 52px;
+      padding: 26px 22px 24px;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
 
-    .process-step::before {
-      top: 31px;
-      left: 24px;
+    .process-step:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201, 149, 138, 0.42);
+      box-shadow: 0 16px 36px rgba(115, 80, 72, 0.10);
     }
 
     .process-step h3 {
-      font-size: 19px;
+      font-size: 21px;
       margin-bottom: 8px;
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+      color: var(--accent-dark);
     }
 
     .prices {
@@ -341,12 +384,55 @@
       margin-top: 26px;
     }
 
-    footer {
-      padding: 28px 0 46px;
+    .footer {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: center;
       text-align: center;
-      color: var(--muted);
+    }
+
+    .footer-left {
+      text-align: left;
       font-family: Arial, sans-serif;
       font-size: 14px;
+    }
+
+    .footer-center {
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--accent-dark);
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .footer-link:hover {
+      transform: translateY(-2px);
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
     }
 
     @media (max-width: 860px) {
@@ -379,13 +465,23 @@
       h1 {
         letter-spacing: 0.08em;
       }
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-left,
+      .footer-right {
+        text-align: center;
+      }
     }
   
+    /* Added enhancements */
     .trust {
       font-family: Arial, sans-serif;
       font-size: 14px;
       color: var(--muted);
-      margin-bottom: 18px;
+      margin: 0 0 18px;
     }
 
     .floating-cta {
@@ -393,10 +489,10 @@
       bottom: 20px;
       right: 20px;
       background: var(--accent);
-      color: white;
+      color: #fff;
       padding: 14px 18px;
       border-radius: 999px;
-      font-weight: bold;
+      font-weight: 700;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       text-decoration: none;
       z-index: 1000;
@@ -409,10 +505,7 @@
     }
 
     @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .mini-card:hover {
@@ -457,7 +550,7 @@
       <div>
         <p class="eyebrow">Gyógytornász</p>
         <h1>Tőzsér Anita</h1>
-        <p class="subtitle">Debrecen, Hajdu-Bihar, Magyarország</p>
+        <p class="subtitle">Debrecen</p>
         <p class="trust">6+ év szakmai tapasztalat • Kórházi és sportrehabilitációs háttér</p>
         <p class="lead">
           Személyre szabott gyógytorna kéz- és felső végtagi sérülések kezelésére, irodai
@@ -594,7 +687,7 @@
       <div class="section-card contact">
         <h2 class="section-title">Kapcsolat</h2>
         <p>Időpontkéréshez vagy kérdés esetén keress telefonon vagy Facebookon.</p>
-        <p>📍 Debrecen</p>
+        <p> Debrecen, Hajdu-Bihar, Magyarország</p>
         <div class="contact-links">
           <a class="button primary" href="tel:+36706112210">+36 70 611 2210</a>
           <a class="button secondary" href="https://www.facebook.com/profile.php?id=61566230889715" target="_blank" rel="noopener">Facebook</a>
@@ -603,15 +696,41 @@
     </section>
   </main>
 
-  <footer class="site">
-    © <span id="year"></span> Tőzsér Anita – gyógytornász-fizioterapeuta
+  <footer class="site footer">
+    <div class="footer-content">
+
+      <div class="footer-left">
+        <strong>Tőzsér Anita</strong><br>
+        Gyógytornász-fizioterapeuta
+      </div>
+
+      <div class="footer-center">
+        <a href="tel:+36706112210" class="footer-link">
+          📞 +36 70 611 2210
+        </a>
+      </div>
+
+      <div class="footer-right">
+        <a href="https://www.facebook.com/profile.php?id=61566230889715" target="_blank" class="footer-link">
+          <!-- Simple Facebook SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.5c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.5v1.8H16l-.4 2.9h-2v7A10 10 0 0 0 22 12"/>
+          </svg>
+          Facebook
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Tőzsér Anita
+    </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
-<a href="tel:+36706112210" class="floating-cta">📞 Időpont</a>
+  <a href="tel:+36706112210" class="floating-cta">📞 Hívás most</a>
 </body>
-
 </html>
